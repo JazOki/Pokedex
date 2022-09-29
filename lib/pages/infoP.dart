@@ -6,7 +6,9 @@ class infoP extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Stateless page"),),
+      appBar: AppBar(
+        title: Text("Stateless page"),
+      ),
       body: Center(child: Text("INFORMACIÓN")),
     );
   }
