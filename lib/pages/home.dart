@@ -19,15 +19,14 @@ class _homePageState extends State<homePage> {
     final response = await http.get(
         "https://raw.githubusercontent.com/PokeAPI/sprites/f301664fbbce6ccbe09f9561287e05653379f870/sprites/pokemon/${item}.png");
 
-    List<Img> imgs = [];
+    List<String> imgs = [];
 
     if (response.statusCode == 200) {
       String body = utf8.decode(response.bodyBytes);
       final jsonData = jsonDecode(body);
       for (var item in jsonData["data"]) {
-        imgs.add(Img(item["title"], item["id"]));
+        imgs.add(String.fromCharCode(item["title"], item["id"]));
       }
-      return imgs;
       // return await imgs();
       // print(jsonData["data"]);
     } else {
