@@ -12,6 +12,8 @@ import 'package:pokedex/pages/Img.dart';
 import 'package:http/http.dart' as http;
 import 'package:pokedex/type/Pokemon.dart';
 
+//route homePage
+
 class homePage extends StatefulWidget {
   static const String route = "/home";
   const homePage({Key? key}) : super(key: key);
@@ -165,6 +167,7 @@ class _homePageState extends State<homePage> {
     return list;
   }
 }
+//route favoritos
 
 class FavPage extends StatelessWidget {
   const FavPage({super.key, required this.pokemons});
@@ -188,6 +191,8 @@ class FavPage extends StatelessWidget {
     );
   }
 }
+
+//route Pokemon
 
 class Info extends StatelessWidget {
   const Info({super.key, required this.pokemon});
