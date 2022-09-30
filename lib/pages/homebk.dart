@@ -60,7 +60,7 @@ class _homePageState extends State<homePage> {
           title: Text("Pokedex"),
           centerTitle: true,
           backgroundColor: Color.fromARGB(255, 31, 31, 31),
-          leading: Icon(Icons.catching_pokemon_outlined),
+          leading: Icon(Icons.catching_pokemon_outlined), 
           actions: [
             IconButton(
                 onPressed: () => {
@@ -71,7 +71,7 @@ class _homePageState extends State<homePage> {
                                     pokemons: favs,
                                   )))
                     },
-                icon: Icon(Icons.star_outline_rounded))
+                icon: Icon(Icons.star_outline_rounded), color: Colors.yellow)
           ]),
       body: FutureBuilder(
         future: pokemons,
@@ -133,7 +133,7 @@ class _homePageState extends State<homePage> {
                           builder: (context) => Info(pokemon: img)))
                 },
                 icon: Icon(Icons.question_mark),
-              )
+              ),
             ]),
           )
         ],
@@ -161,7 +161,7 @@ class _homePageState extends State<homePage> {
 
     for (var pokemon in pokemons) {
       list.add(Expanded(child: Image.network(pokemon.image, fit: BoxFit.fill)));
-      list.add(Text("#${pokemon.id} ${pokemon.getName()}"));
+      list.add(Text("#${pokemon.id} ${pokemon.getName()}", style: TextStyle(color: Colors.white)),);
     }
 
     return list;
@@ -207,13 +207,14 @@ class Info extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Información'),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(179, 58, 58, 58),
+        backgroundColor: Color.fromARGB(255, 0, 0, 0),
         leading: IconButton(
             onPressed: () => {Navigator.pop(context)},
             icon: Icon(Icons.catching_pokemon_outlined)),
       ),
       body: Column(children: [
-        Text("Pókemon: #${pokemon.id}"),
+        Text("Pókemon: #${pokemon.id}",
+        style: TextStyle(color: Colors.white)),
         Padding(
           padding: const EdgeInsets.all(1.0),
           child: Row(children: [
@@ -224,7 +225,8 @@ class Info extends StatelessWidget {
             ))
           ]),
         ),
-        Text("Nombre: ${pokemon.getName()}"),
+        Text("Nombre: ${pokemon.getName()}",
+        style: TextStyle(color: Colors.white)),
         Padding(
           padding: const EdgeInsets.all(5.0),
           child: Row(children: _homePageState().getInfo(pokemon)),
