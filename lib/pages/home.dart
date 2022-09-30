@@ -8,7 +8,6 @@
 //menu dragoncitos
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:pokedex/pages/Img.dart';
 import 'package:http/http.dart' as http;
 import 'package:pokedex/type/Pokemon.dart';
 
@@ -24,7 +23,7 @@ class homePage extends StatefulWidget {
 
 class _homePageState extends State<homePage> {
   late Future<List<Pokemon>> pokemons;
-  var url = "https://pokeapi.co/api/v2/pokemon?limit=151";
+  var url = "https://pokeapi.co/api/v2/pokemon?limit=152";
 
   Future<List<Pokemon>> _getPokemons() async {
     final response = await http.get(Uri.parse(url));
@@ -56,6 +55,7 @@ class _homePageState extends State<homePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 8, 56, 80),
       appBar: AppBar(
           title: Text("Pokedex"),
           centerTitle: true,
@@ -177,10 +177,11 @@ class FavPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 8, 56, 80),
       appBar: AppBar(
         title: const Text('Favoritos'),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(179, 58, 58, 58),
+        backgroundColor: Color.fromARGB(255, 31, 31, 31),
         leading: IconButton(
             onPressed: () => {Navigator.pop(context)},
             icon: Icon(Icons.catching_pokemon_outlined)),
@@ -202,6 +203,7 @@ class Info extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 8, 56, 80),
       appBar: AppBar(
         title: const Text('Información'),
         centerTitle: true,
